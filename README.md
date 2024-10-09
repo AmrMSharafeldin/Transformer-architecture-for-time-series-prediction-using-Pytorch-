@@ -56,7 +56,7 @@ The core of the network is an encoder block that is primarily composed of:
 - **lr**: `0.001`
 - **Loss function**: 
   - Mean Absolute Error (MAE) is used to compute the average of absolute differences between predicted and actual values, making it a straightforward measure of error.
-
+- **Resutls**:  ![Architecture Diagram](Transformer/visualization/test_plot.jpg)
 
 
 
