@@ -20,8 +20,8 @@ Where:
 # **Architecture**
 
 The proposed architecture is a hybrid of an encoder block adapted from transformers and 1D convolution layers.
-![Architecture Diagram](Transformer/visualization/Time Step 1.jpg)
-![Input -> output](Transformer/visualization/Time Step 1.jpg)
+![Architecture Diagram](Transformer/visualization/Figure1.jpg)
+
 ## **Encoder Layer**:
 The core of the network is an encoder block that is primarily composed of:
 - A multi-head self-attention layer, followed by two convolution layers.
