@@ -1,6 +1,6 @@
 # Transformer-architecture-for-time-series-prediction-using-Pytorch-
 
- #**Introduction**
+ # **Introduction**
  **Overview**
 Predicting stock market behavior represents a serious challenge for financial analysts due to the random nature of stock market features. These features are often unpredictable and difficult to generalize, making accurate modeling of stock market behavior an extremely difficult problem.
 
