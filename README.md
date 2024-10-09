@@ -1,10 +1,9 @@
 # Transformer-architecture-for-time-series-prediction-using-Pytorch-
 
- **Project Summary**
-predicting the stock market behavior represents a serious challenge for financial analysts. That's due to the random nature of the stock market features as their movements are often unpredictable and difficult to generalize, leaving accurate modeling of stock market behavior an extremely difficult problem. The category under which this problem lies is referred to as technical analysis, which is the interpretation of price actions in the stock market. This type of analysis mainly focuses on determining the trend's likelihood to continue or reverse. Technical analysis aims to reflect upon all the available information that could affect the behavior of the trend. It assumes that prices follow the same past tendencies. Thus Technical analysis of stock markets can be seen as a time series problem, in which given a sequence of observations, we are trying to predict a fixed-sized window of future behaviors based on the trend. A simple solver for this problem can thought of as simply computing the linear combination of the input sequence where the impact of previous time spots is decided by the coefficient factor at each period.An improved predictor can constructed by optimizing the predictions of our current model. Making it an optimization problem on time series data.Which is very appropriate for modern deep-learning solvers.
-p = β₁* y-₁ + β₂* yₜ-₂ + β₃ * yₜ-₃ + ………… + βₖ * yₜ-ₖ the prediction of our auto regression model, p is the ground truth
-Where the coefficients β represent the weight of each entry along the time steps concerning 1d axis which represents the feature. 
-E[p-p] goal -> argminE(i) -> i=[β₁,β₂….βₖ]   
+ **Overview**
+Predicting stock market behavior represents a serious challenge for financial analysts due to the random nature of stock market features. These features are often unpredictable and difficult to generalize, making accurate modeling of stock market behavior an extremely difficult problem.
+
+The category under which this problem lies is referred to as technical analysis, which involves the interpretation of price actions in the stock market. This type of analysis focuses primarily on determining the likelihood of a trend continuing or reversing. Technical analysis aims to reflect all available information that could affect the behavior of the trend and assumes that prices tend to follow the same past tendencies. 
 
 
 # **Architecture**
@@ -42,7 +41,7 @@ python3 main.py [--train] [--test] [--analyze] [--viz]
 ```
 ### **Examples**:
 
-**To train themodel and visualize the performance:**
+**To train the model and visualize the performance:**
 ```
 python3 main.py --train --viz
 ```
