@@ -9,7 +9,7 @@ The category under which this problem lies is referred to as technical analysis,
 **Deep Learning perspective**
 the technical analysis of stock markets can be seen as a time series problem, where, given a sequence of observations, we aim to predict a fixed-size window of future behaviors based on the trend. A simple solver for this problem can be thought of as computing the linear combination of the input sequence, where a coefficient factor determines the impact of previous time spots at each period. An improved predictor can be constructed by optimizing the predictions of our current model, turning it into an optimization problem on time series data, which is very appropriate for modern deep-learning solvers.
 
-The prediction of our autoregression model can be expressed as:
+The prediction of our autoregression model can be expressed as:\n
 **p = β₁ * yₜ₋₁ + β₂ * yₜ₋₂ + β₃ * yₜ₋₃ + … + βₖ * yₜ₋ₖ**
 Where:
 - **p**: the predicted value.
