@@ -20,16 +20,43 @@ Where:
 
 # **Architecture**
 
-The proposed architecture is a hybrid of an encoder block adapted from transformers and 1D convolution layers. 
-Encoder Layer:
-The Core of the network is an encoder block that is primarily composed of a multi-head self-attention layer followed by 2 convolution layers. The multi-head layer is designed to create a contextually aware vector of shape (sequence_lenght, num_afeatures) for each sentence. Then Conv1D increases the dimensionality of the num_features to detect more complex features of the contextual aware vector. Normalization, dropouts, and residual connect layers are added to retain the stability of the backpropagation 
-Transformers:
-The transformer block stacks N encoder blocks to obtain contextual awareness from higher to lower features. Then the outputs of this operation through map layers to increase the learnability of the model and also to match the outputs to the desired output shape (examples, output sequence length) 
+The proposed architecture is a hybrid of an encoder block adapted from transformers and 1D convolution layers.
 
-It’s important to note that the input and ground truth sequences are normalized before feedforward. Then the inverse transformation is applied to the predictions for plotting and computing the Relative error, to be later used in Model Performance Comparison. Also do to excessive ram usage by the model. It wasn’t possible to run feedforward on the full test data locally, Thus  the analysis.csv for this model was computed using Google Collab
+## **Encoder Layer**:
+The core of the network is an encoder block that is primarily composed of:
+- A multi-head self-attention layer, followed by two convolution layers.
+- The multi-head layer creates a contextually aware vector of shape `(sequence_length, num_features)` for each sentence.
+- Conv1D layers increase the dimensionality of `num_features`, enabling detection of more complex features in the context-aware vector.
+- Normalization, dropout, and residual connection layers are added to:
+  - Stabilize backpropagation.
+  - Prevent overfitting.
+  - Preserve gradient flow to ensure the model learns effectively.
 
-HyperParameters and Loss Function :
-"batch_size":32,"epochs" :25,"lr":0.001, Loss function used is MAE
+## **Transformers**:
+- The transformer block stacks `N` encoder blocks to:
+  - Obtain contextual awareness from higher to lower-level features.
+- Outputs are passed through mapping layers to:
+  - Increase the learnability of the model.
+  - Match the outputs to the desired output shape `(examples, output_sequence_length)`.
+
+### **Additional Notes**:
+- Input and ground truth sequences are normalized before feedforward to ensure better stability during training.
+- After predictions, an inverse transformation is applied to:
+  - Revert the normalized predictions to their original scale.
+  - Facilitate plotting and computation of relative error, which is used for model performance comparison.
+
+### **Limitations**:
+- Due to excessive RAM usage, it wasn’t possible to run feedforward on the full test data locally.
+- The `analysis.csv` file for this model was computed using Google Colab.
+
+# **Hyperparameters and Loss Function**
+
+- **batch_size**: `32`
+- **epochs**: `25`
+- **lr**: `0.001`
+- **Loss function**: 
+  - Mean Absolute Error (MAE) is used to compute the average of absolute differences between predicted and actual values, making it a straightforward measure of error.
+
 
 
 
