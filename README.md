@@ -1,10 +1,21 @@
 # Transformer-architecture-for-time-series-prediction-using-Pytorch-
 
- # **Introduction**
+ # **Introduction:**
  **Overview**
 Predicting stock market behavior represents a serious challenge for financial analysts due to the random nature of stock market features. These features are often unpredictable and difficult to generalize, making accurate modeling of stock market behavior an extremely difficult problem.
 
 The category under which this problem lies is referred to as technical analysis, which involves the interpretation of price actions in the stock market. This type of analysis focuses primarily on determining the likelihood of a trend continuing or reversing. Technical analysis aims to reflect all available information that could affect the behavior of the trend and assumes that prices tend to follow the same past tendencies. 
+
+**Deep Learning perspective**
+the technical analysis of stock markets can be seen as a time series problem, where, given a sequence of observations, we aim to predict a fixed-size window of future behaviors based on the trend. A simple solver for this problem can be thought of as computing the linear combination of the input sequence, where a coefficient factor determines the impact of previous time spots at each period. An improved predictor can be constructed by optimizing the predictions of our current model, turning it into an optimization problem on time series data, which is very appropriate for modern deep-learning solvers.
+
+The prediction of our autoregression model can be expressed as:
+**p = β₁ * yₜ₋₁ + β₂ * yₜ₋₂ + β₃ * yₜ₋₃ + … + βₖ * yₜ₋ₖ**
+Where:
+- **p**: the predicted value.
+- **yₜ₋ᵢ**: the value of the time series at the previous time step 𝑡−𝑖.
+- **βᵢ**: the coefficient representing the weight of each time step's contribution.
+
 
 
 # **Architecture**
